@@ -11,7 +11,7 @@
                         <div>
                             <!-- 画像 -->
                             <div class="table-text mb-3">
-                                <div> <img src="/upload/{{$Log->image}}" width="100%"></div>
+                                <div> <img src="upload/{{$Log->image}}" width="100%"></div>
                             </div>
                             
                             <!-- タイトル -->
