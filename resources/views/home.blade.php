@@ -13,7 +13,7 @@
                     
                     <div class="alert alert-primary">
                             <!-- Book: 既に登録されてる本のリスト -->
-                           <p>Profile)</p>
+                           <h1>Profile</h1>
                             @if(isset($profiles))
         
                                 <tr>

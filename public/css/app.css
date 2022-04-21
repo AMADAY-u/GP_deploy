@@ -11334,6 +11334,7 @@ main{
   position: fixed;
   left: 0;
   bottom: 0;
+  margin-bottom: 0;
 }
 
 

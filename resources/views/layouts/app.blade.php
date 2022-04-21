@@ -13,10 +13,11 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href=""//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    <link rel='stylesheet' href="{{ asset('css/reset.css') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -81,12 +82,12 @@
             
         </main>
         <footer>
-            <div class = "p-3 row bg-info menu-bottom shadow-bottom">
-                   <div class="col-3 text-center"><a href="{{ url('/Logslist') }}" class = "text-danger">健康</a></div>
-                   <div class="col-3 text-center"><a href="" class = "text-success">不調</a></div>
-                   <div class="col-3 text-center"><a href="{{ url('/') }}" class = "text-primary">投稿</a></div>
-                   <div class="col-3 text-center"><a href="{{ url('/home') }}" class = "text-dark">you</a></div>
-            </div>
+            <ul class = "p-3 row bg-info menu-bottom shadow-bottom">
+                   <li class="col-3 text-center"><a href="{{ url('/Logslist') }}" class = "text-danger">健康</a></li>
+                   <li class="col-3 text-center"><a href="" class = "text-success">不調</a></li>
+                   <li class="col-3 text-center"><a href="{{ url('/') }}" class = "text-primary">投稿</a></li>
+                   <li class="col-3 text-center"><a href="{{ url('/home') }}" class = "text-dark">you</a></li>
+            </ul>
         </footer>
 
        

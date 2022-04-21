@@ -24,7 +24,14 @@
                                 <!-- 餌内容物 -->
                                 <div class="table-text pb-3">
                                     <div class="fs-4" style="text-decoration:underline;">何食べてる？</div>
-                                    <div>{{ $Log->pet_foodname }}</div>
+                                    @if($Log->pet_foodname = 5)
+                                        <div>元気良い</div>
+                                    
+                                    @elseif($Log->pet_foodname = 4)
+                                         <div>いつも通り</div>
+                                     
+                                    
+                                    
                                 </div>
                                 <!-- 活動量 -->
                                 <div class="table-text pb-3">
