@@ -22,11 +22,13 @@
 </head>
 <body>
     <div id="app">
-        <nav class="container navbar-expand-md navbar-light bg-white menu-up shadow">
-            <div class="container ">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'pealthy log') }}
-                </a>
+        <nav class="navbar-expand-md navbar-light bg-white menu-up shadow">
+            <div class="container">
+                
+                    <a class="navbar-brand" href="{{ url('/Loglist') }}">
+                        <img src="{{ asset('img/horizontal_on_white_by_logaster.png') }}" alt="logo" style="width:150px;">
+                    </a>
+                    
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -77,16 +79,20 @@
             </div>
         </nav>
 
-        <main class="py-5">
+        <main class="py-5" style = "background-color:">
+            
+            
             @yield('content')
             
         </main>
         <footer>
             <ul class = "p-3 row bg-info menu-bottom shadow-bottom">
-                   <li class="col-3 text-center"><a href="{{ url('/Logslist') }}" class = "text-danger">健康</a></li>
-                   <li class="col-3 text-center"><a href="" class = "text-success">不調</a></li>
-                   <li class="col-3 text-center"><a href="{{ url('/') }}" class = "text-primary">投稿</a></li>
-                   <li class="col-3 text-center"><a href="{{ url('/home') }}" class = "text-dark">you</a></li>
+                   <li class="col-3 text-center"><a href="{{ url('/Logslist1') }}" class = "text-danger"> <img src="{{ asset('img/icons8-犬の心-30.png') }}" alt="logo" style="width:35px;"></a></li>
+                   <li class="col-3 text-center"><a href="{{ url('/Logslist2') }}" class = "text-success"> <img src="{{ asset('img/icons8-ドッグコーン-30.png') }}" alt="logo" style="width:35px;"></a></li>
+                   <li class="col-3 text-center"><a href="{{ url('/') }}" class = "text-primary"> <img src="{{ asset('img/icons8-peace-pigeon-50.png') }}" alt="logo" style="width:35px;"></a></li>
+                   
+                   <li class="col-3 text-center"><a href="{{ url('/home') }}" class = "text-dark"> <img src="{{ asset('img/icons8-犬の家-64.png') }}" alt="logo" style="width:35px;"></a></li>
+                   
             </ul>
         </footer>
 

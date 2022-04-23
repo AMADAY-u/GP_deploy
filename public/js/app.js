@@ -40367,3 +40367,49 @@ Vue.compile = compileToFunctions;
 /******/ 	
 /******/ })()
 ;
+
+
+function buttonClick() {
+  let btnHide = document.getElementById("hide");
+  let subForm = document.getElementById("sub-form");
+  if (btnHide.checked) {
+    subForm.style.display = "none";
+    
+    
+  } else {
+    subForm.style.display = "";
+  }
+};
+
+var ctx = document.getElementById("myRaderChart");
+var myRadarChart = new Chart(ctx, {
+    type: 'radar', 
+    data: { 
+        labels: ["活動性", "食欲", "飲水", "尿", "便", "嘔吐"],
+        datasets: [{
+            label: 'Aさん',
+            data: [$Activity, $Hungry, $Water, $Urine, $Feces, $Emit],
+            backgroundColor: 'RGBA(225,95,150, 0.5)',
+            borderColor: 'RGBA(225,95,150, 1)',
+            borderWidth: 1,
+            pointBackgroundColor: 'RGB(46,106,177)'
+        }]
+    },
+    options: {
+        title: {
+            display: true,
+            text: '健康状態'
+        },
+        scale:{
+            ticks:{
+                suggestedMin: 0,
+                suggestedMax: 5,
+                stepSize: 1,
+                callback: function(value, index, values){
+                    return  value +  '点'
+                }
+            }
+        }
+    }
+});
+        

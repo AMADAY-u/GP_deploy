@@ -21,9 +21,14 @@ return new class extends Migration
             $table->string('image');
             $table->string('pet_title');
             $table->string('pet_foodname');
-            $table->string('pet_activity');
-            $table->string('pet_hungry');
-            $table->text('pet_comment');
+            $table->Integer('comment_check');
+            $table->Integer('pet_activity')->nullable();
+            $table->Integer('pet_hungry')->nullable();
+            $table->Integer('pet_water')->nullable();
+            $table->Integer('pet_urine')->nullable();
+            $table->Integer('pet_feces')->nullable();
+            $table->Integer('pet_emit')->nullable();
+            $table->text('pet_comment')->nullable();
             $table->timestamps();
         });
     }

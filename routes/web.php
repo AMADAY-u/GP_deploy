@@ -24,12 +24,13 @@ Route::get('/', [LogController::class, 'create']);
 
 // 「記録」の詳細画面表示
 Route::get('/Logdetail/{Log}',[LogController::class, 'show']);
-
 //詳細画面のcomment追加
 Route::post('/Logdetails', [CommentController::class, 'store']);
 
 // 投稿のダッシュボード表示(Logslist.blade.php)
-Route::get('/Logslist',[LogController::class, 'index']);
+Route::get('/Logslist1',[LogController::class, 'index1']);
+
+Route::get('/Logslist2',[LogController::class, 'index2']);
     
 Route::group(['middleware' => 'auth'], function(){
 
@@ -68,5 +69,7 @@ Route::post('/Profiles', [ProfileController::class, 'store']);
 
 // 新「profile」を追加
 Route::post('/Comments', [CommentController::class, 'store']);
+
+
 
 Auth::routes();

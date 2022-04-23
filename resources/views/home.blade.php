@@ -6,35 +6,44 @@
         <div class="col-md-8">
             <div class="card">
 
-                <div class="card-body">
+                <div class="card-body my-4">
                     <!--↓ここから追加↓-->
                     
                    
                     
                     <div class="alert alert-primary">
                             <!-- Book: 既に登録されてる本のリスト -->
-                           <h1>Profile</h1>
+                           <h1 style='color: orange;'>Profile</h1>
                             @if(isset($profiles))
         
                                 <tr>
                                     <!-- タイトル -->
                                     <td class="table-text ">
-                                        <h2 class="pb-1 text-black">{{ $profiles->pet_name}} ちゃん</h2>
-                                        
-                                            <div class="container">
-                                                <div class="row g-2">
+                                        <div class="d-flex">
+                                             <div class="flex-shrink-0">
+                                                 <img src="{{ asset('img/201807_hana_01.jpg') }}" alt="hana" style="width:100px;">
                                                     
-                                                    <div class="pb-1 col-5">品種：{{ $profiles->pet_specie}}</div>
-                                                    <div class="pb-1 col-7">性別：{{ $profiles->pet_sex}}</div>
-            
-                                                    <div class="pb-1 col-4">年齢：{{ $profiles->pet_age}}</div>
-                                                    <div class="pb-1 col-8">誕生日：{{ $profiles->pet_birth}}</div>
+                                             </div>
+                                             <div class="flex-grow-1 ms-3">
+                                                <h2 class="pb-1 text-black">{{ $profiles->pet_name}} ちゃん</h2>
+                                        
+                                                <div class="">
+                                                    <div class="g-2">
+                                                        
+                                                        <div class="">品種：{{ $profiles->pet_specie}}</div>
+                                                        <div class="">性別：{{ $profiles->pet_sex}}</div>
+                
+                                                        <div class="">年齢：{{ $profiles->pet_age}}</div>
+                                                        <div class="">誕生日：{{ $profiles->pet_birth}}</div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <hr>
-                                            <div class="fw-bold">自己紹介</div>
-                                            <div>{{ $profiles->pet_content}}</div>
-                                            
+                                             </div>
+                                        </div>
+                                        
+                                        <hr>
+                                        <div class="fw-bold">自己紹介</div>
+                                        <div>{{ $profiles->pet_content}}</div>
+                                        
 
                                         
                                         
@@ -84,14 +93,14 @@
                                              <a href="{{ url('Logdetail/'.$Log->id) }}">
                                                 <div> <img src="upload/{{$Log->image}}" width="200"></div>
                                             </a>
+                                            <div class="fw-bold text-center">{{ $Log->pet_title}}</div>
                                         </td>
                                         
                                         
                                         <!-- タイトル -->
-                                        <td class="table-text ">
-                                            <div class="pb-4">{{ $Log->pet_title}}</div>
-                                            
-                                            <div class='row'>
+                                        <td class="table-text align-top">
+                                            <div class='row pt-2'>
+                                                
                                                 <div class="pb-3">
                                                      <form action="{{ url('Log/'.$Log->id) }}" method="POST">
                                                         @csrf

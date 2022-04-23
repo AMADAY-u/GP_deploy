@@ -28,18 +28,24 @@
                 <input type="text" name="pet_foodname" class="form-control" id="pet_foodname" value="{{ old('pet_foodname') }}">
             </div>
             
-            <!--種類-->
+            <!-- コメント -->
+            <div class="form-group col-md-6 p-2">
+                <label for="pet_comment" class="col-sm-3 control-label">コメント</label>
+                <input type="textarea" name="pet_comment" class="form-control" id="pet_comment" value="{{ old('pet_comment') }}">
+            </div>
+            
+            <!--体調種類-->
             
              <div class="form-group col-md-6 p-2row g-2">
                 <label for="pet_comment" class="col-sm-3 control-label">今の状態は？</label>
         			<p>
             			<label class=" col-6">
-            				<input  id="hide" class="col-6" name="comment_check" type="radio" value="1" onclick="buttonClick()" checked/>
+            				<input  id="hide" class="col-6" name="comment_check" type="radio" value="1" onclick="buttonClick()"/>
             				<span>健康(^_^)</span>
             			</label>
         			</p>
         			<label class="with-gap col-6">
-        				<input id="disp" class="with-gap col-6 toggle" name="comment_check" type="radio" value="0" onclick="buttonClick()"/>
+        				<input id="disp" class="with-gap col-6" name="comment_check" type="radio" value="0" onclick="buttonClick()"/>
         				<span>不調(＞＜)</span>
         			</label>
             </div>
@@ -100,7 +106,7 @@
     					<option name="pet_urine" class="form-control" id="pet_urine" value="4">いつも通り</option>
     					<option name="pet_urine" class="form-control" id="pet_urine" value="3">いつもより少ないかな</option>
     					<option name="pet_urine" class="form-control" id="pet_urine" value="2">少しだけ出てるけど少ない</option>
-    					<option name="pet_urine" class="form-control" id="pet_urine" value="1">踏ん張っているけど出ていない / 血の入った尿</option>
+    					<option name="pet_urine" class="form-control" id="pet_urine" value="1">踏ん張っているけど出ていない / 血尿</option>
     					<option name="pet_urine" class="form-control" id="pet_urine" value="0">全く見られない</option>
     				</select>
                 </div>
@@ -112,15 +118,15 @@
                 	<select class="browser-default form-control" name="pet_feces">
     					<option name="pet_feces" class="form-control text-muted" id="pet_feces" value="" disabled selected>排便について選んでね🐍</option>
     					<option name="pet_feces" class="form-control" id="pet_feces" value="5">いつも通り変わらない</option>
-    					<option name="pet_feces" class="form-control" id="pet_feces" value="4">少し頻度が減った / まれにやわらかい便が出る</option>
-    					<option name="pet_feces" class="form-control" id="pet_feces" value="3">頻度が明らかに減った / 少し柔らかい便が出ている</option>
-    					<option name="pet_feces" class="form-control" id="pet_feces" value="2">ほんの少し出る / ときどき泥状の便が出る</option>
-    					<option name="pet_feces" class="form-control" id="pet_feces" value="1">ほとんど出ない / 泥状 / 黒い便</option>
-    					<option name="pet_feces" class="form-control" id="pet_feces" value="0">全くでない / 液状 / 血がある</option>
+    					<option name="pet_feces" class="form-control" id="pet_feces" value="4">少し頻度が減った/たまにやわらかい便が出る</option>
+    					<option name="pet_feces" class="form-control" id="pet_feces" value="3">頻度が明らかに減った/柔らかい便が出ている</option>
+    					<option name="pet_feces" class="form-control" id="pet_feces" value="2">ほんの少し出る/ときどき泥状の便が出る</option>
+    					<option name="pet_feces" class="form-control" id="pet_feces" value="1">ほとんど出ない/泥状/黒い便</option>
+    					<option name="pet_feces" class="form-control" id="pet_feces" value="0">全くでない/液状/血便</option>
     				</select>
                 </div>
                 
-                 <!-- 排泄 -->
+                 <!-- 嘔吐 -->
                 <div class="form-group col-md-6 p-2">
                     <label for="pet_emit" class="col-sm-3 control-label">どれくらい吐く？</label>
                     <!--<input type="text" name="pet_hungry" class="form-control" id="pet_hungry" value="{{ old('pet_emit') }}">-->
@@ -131,16 +137,12 @@
     					<option name="pet_emit" class="form-control" id="pet_emit" value="3">いつもより少し多いかも</option>
     					<option name="pet_emit" class="form-control" id="pet_emit" value="2">多いけど理由はわかる（薬とか）</option>
     					<option name="pet_emit" class="form-control" id="pet_emit" value="1">理由がわからず明らかに多い</option>
-    					<option name="pet_emit" class="form-control" id="pet_emit" value="0">止められない</option>
+    					<option name="pet_emit" class="form-control" id="pet_emit" value="0">止まらない</option>
     				</select>
                 </div>
-                </div>
-            
-            <!-- コメント -->
-            <div class="form-group col-md-6 p-2">
-                <label for="pet_comment" class="col-sm-3 control-label">コメント</label>
-                <input type="textarea" name="pet_comment" class="form-control" id="pet_comment" value="{{ old('pet_comment') }}">
             </div>
+            
+            
             
            
             
@@ -149,7 +151,7 @@
             <div class="form-group pt-3">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-primary">
-                        Save
+                        投稿
                     </button>
                 </div>
             </div>
@@ -157,18 +159,5 @@
     </div>
     
     
-    <script>
-        function buttonClick() {
-          let btnHide = document.getElementById("hide");
-          let subForm = document.getElementById("sub-form");
-          if (btnHide.checked) {
-            subForm.style.display = "none";
-            
-            
-          } else {
-            subForm.style.display = "";
-          }
-        }
-        
-    </script>
+    
 @endsection

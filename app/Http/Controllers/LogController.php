@@ -13,10 +13,15 @@ class LogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index1()
     {
         $Logs = Log::orderBy('created_at', 'asc')->get();
-        return view('Logslist', ['Logs'=> $Logs]);
+        return view('Logslist1', ['Logs'=> $Logs]);
+    }
+    public function index2()
+    {
+        $Logs = Log::orderBy('created_at', 'asc')->get();
+        return view('Logslist2', ['Logs'=> $Logs]);
     }
 
     /**
@@ -52,11 +57,17 @@ class LogController extends Controller
         $Log->image =    $filename;
         $Log->pet_title =    $request->pet_title;
         $Log->pet_foodname =  $request->pet_foodname;
+        $Log->comment_check =  $request->comment_check;
         $Log->pet_activity =  $request->pet_activity;
         $Log->pet_hungry =    $request->pet_hungry;
+        $Log->pet_water =  $request->pet_water;
+        $Log->pet_urine =  $request->pet_urine;
+        $Log->pet_feces =  $request->pet_feces;
+        $Log->pet_emit =  $request->pet_emit;
         $Log->pet_comment =    $request->pet_comment;
+        
         $Log->save();
-        return redirect('/Logslist');
+        return redirect("/Logdetail/$Log->id");
     }
 
     /**
@@ -99,8 +110,13 @@ class LogController extends Controller
         $Logs = Log::where('user_id',Auth::id())->find($request->id);
         $Logs->pet_title =    $request->pet_title;
         $Logs->pet_foodname =  $request->pet_foodname;
+        $Logs->comment_check =  $request->comment_check;
         $Logs->pet_activity =  $request->pet_activity;
         $Logs->pet_hungry =    $request->pet_hungry;
+        $Logs->pet_water =  $request->pet_water;
+        $Logs->pet_urine =  $request->pet_urine;
+        $Logs->pet_feces =  $request->pet_feces;
+        $Logs->pet_emit =  $request->pet_emit;
         $Logs->pet_comment =    $request->pet_comment;
         $Logs->save();
         return redirect('/Logslist');
