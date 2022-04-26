@@ -61,10 +61,9 @@
                                
                                 
                                 
-                                @if($Log->comment_check == 0)
                                     <div class="">
                                          <!--活動量 -->
-                                        <div class="table-text pb-3  d-flex flex-wrap">
+                                        <div class="table-text py-1 d-flex flex-wrap border-top border-bottom border-info">
                                             <div class="text-center" style="text-decoration:underline; width:50%;">どれくらい元気？</div>
                                             <div class="text-center" style="width:50%;">
                                                 @if($Log->pet_activity == 5)
@@ -88,7 +87,7 @@
                                             </div>
                                         </div>
                                          <!--食欲 -->
-                                        <div class="table-text pb-3  d-flex flex-wrap">
+                                        <div class="table-text py-1 d-flex flex-wrap border-bottom border-info">
                                             <div class="text-center" style="text-decoration:underline; width:50%;">食欲ある？</div>
                                             <div class="text-center" style="width:50%;">
                                             @if($Log->pet_hungry == 5)
@@ -113,7 +112,7 @@
                                         </div>
                                         
                                          <!--飲水 -->
-                                         <div class="table-text pb-3  d-flex flex-wrap">
+                                        <div class="table-text py-1 d-flex flex-wrap border-bottom border-info">
                                             <div class="text-center" style="text-decoration:underline; width:50%;">水どれくらい飲む？</div>
                                             <div class="text-center" style="width:50%;">
                                             @if($Log->pet_water == 5)
@@ -138,7 +137,7 @@
                                         </div>
                                         
                                         <!--排尿 -->
-                                         <div class="table-text pb-3  d-flex flex-wrap">
+                                        <div class="table-text py-1 d-flex flex-wrap border-bottom border-info">
                                             <div class="text-center" style="text-decoration:underline; width:50%;">おしっこはしてる？</div>
                                             <div class="text-center" style="width:50%;">
                                             @if($Log->pet_urine == 5)
@@ -163,7 +162,7 @@
                                         </div>
                                         
                                          <!--排尿 -->
-                                        <div class="table-text pb-3  d-flex flex-wrap">
+                                        <div class="table-text py-1 d-flex flex-wrap border-bottom border-info">
                                             <div class="text-center" style="text-decoration:underline; width:50%;">うんちはどんな感じ？</div>
                                             <div class="text-center" style="width:50%;">
                                             @if($Log->pet_feces == 5)
@@ -188,7 +187,7 @@
                                         </div>
                                         
                                           <!--嘔吐 -->
-                                         <div class="table-text pb-3  d-flex flex-wrap">
+                                        <div class="table-text py-1 d-flex flex-wrap border-bottom border-info">
                                             <div class="text-center" style="text-decoration:underline; width:50%;">どれくらい吐く？</div>
                                             <div class="text-center" style="width:50%;">
                                             @if($Log->pet_emit == 5)
@@ -211,10 +210,56 @@
                                             @endif
                                             </div>
                                          </div>
-                                    </div
-                                    
-                                @endif
-                               </div>
+                                    </div>
+                                </div>    
+                                
+                                <script>
+                                let activity = JSON.parse('<?php echo $Activity; ?>'); 
+                                let hungry = JSON.parse('<?php echo $Hungry; ?>'); 
+                                let water = JSON.parse('<?php echo $Water; ?>'); 
+                                let urine = JSON.parse('<?php echo $Urine; ?>'); 
+                                let feces = JSON.parse('<?php echo $Feces; ?>'); 
+                                let emit = JSON.parse('<?php echo $Emit; ?>'); 
+                                
+                               
+                               
+                                
+                                console.log(activity);
+                                var ctx = document.getElementById("myRaderChart");
+                                var myRadarChart = new Chart(ctx, {
+                                    type: 'radar', 
+                                    data: { 
+                                        labels: ["活動性", "食欲", "飲水", "尿", "便", "嘔吐"],
+                                        datasets: [{
+                                            label: 'Aさん',
+                                            data: [activity, hungry, water, urine, feces, emit],
+                                            backgroundColor: 'RGBA(225,95,150, 0.5)',
+                                            borderColor: 'RGBA(225,95,150, 1)',
+                                            borderWidth: 1,
+                                            pointBackgroundColor: 'RGB(46,106,177)'
+                                        }]
+                                    },
+                                    options: {
+                                        title: {
+                                            display: true,
+                                            text: '健康状態'
+                                        },
+                                        scale:{
+                                            ticks:{
+                                                suggestedMin: 0,
+                                                suggestedMax: 5,
+                                                stepSize: 1,
+                                                callback: function(value, index, values){
+                                                    return  value +  '点'
+                                                }
+                                            }
+                                        }
+                                    }
+                                });
+                               
+                            </script>
+                               
+                               
                             @endif
                             
                             
@@ -276,7 +321,7 @@
                                          <!-- コメント 登録ボタン -->
                                         <div class="input-group mb-3">
                                             <input type="text" id="comment_content" class="form-control" name="comment_content" placeholder="コメント入力してね！"  aria-describedby="button-addon2" value="{{ old('comment_content') }}">
-                                            <button class="btn btn-primary" type="submit" id="button-addon2">送信</button>
+                                            <button class="btn btn-primary" type="submit" id="button-addon2" style="z-index:0;">送信</button>
                                         </div>
                                     </form>
                                 </div>
@@ -322,49 +367,5 @@
                 </div>
             </table>
         </div>
-        <script>
-        let activity = JSON.parse('<?php echo $Activity; ?>'); 
-        let hungry = JSON.parse('<?php echo $Hungry; ?>'); 
-        let water = JSON.parse('<?php echo $Water; ?>'); 
-        let urine = JSON.parse('<?php echo $Urine; ?>'); 
-        let feces = JSON.parse('<?php echo $Feces; ?>'); 
-        let emit = JSON.parse('<?php echo $Emit; ?>'); 
         
-       
-       
-        
-        console.log(activity);
-        var ctx = document.getElementById("myRaderChart");
-        var myRadarChart = new Chart(ctx, {
-            type: 'radar', 
-            data: { 
-                labels: ["活動性", "食欲", "飲水", "尿", "便", "嘔吐"],
-                datasets: [{
-                    label: 'Aさん',
-                    data: [activity, hungry, water, urine, feces, emit],
-                    backgroundColor: 'RGBA(225,95,150, 0.5)',
-                    borderColor: 'RGBA(225,95,150, 1)',
-                    borderWidth: 1,
-                    pointBackgroundColor: 'RGB(46,106,177)'
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: '健康状態'
-                },
-                scale:{
-                    ticks:{
-                        suggestedMin: 0,
-                        suggestedMax: 5,
-                        stepSize: 1,
-                        callback: function(value, index, values){
-                            return  value +  '点'
-                        }
-                    }
-                }
-            }
-        });
-       
-    </script>
 @endsection
