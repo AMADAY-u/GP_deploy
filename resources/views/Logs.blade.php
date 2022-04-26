@@ -2,7 +2,7 @@
 @section('content')
     <!-- Bootstrapの定形コード… -->
     <div class="card-body my-4">
-        <h1 class="card-title">
+        <h1 class="card-title text-center">
             投稿フォーム
         </h1>
         
@@ -41,7 +41,8 @@
         			<p>
             			<label class=" col-6">
             				<input  id="hide" class="col-6" name="comment_check" type="radio" value="1" onclick="buttonClick()"/>
-            				<span>健康(^_^)</span>
+            				<span>健康(^ ^)b</span>
+            				
             			</label>
         			</p>
         			<label class="with-gap col-6">

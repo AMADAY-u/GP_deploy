@@ -5,20 +5,20 @@
         <div class="my-5">
             <table class="table table-striped task-table">
                 <!-- テーブルヘッダ -->
-                <div>
+                <div class="card-title text-center">
                     <h1>不調一覧</h1>
                 </div>
                 <!-- テーブル本体 -->
                 <div class="d-flex flex-wrap">
                     @foreach ($Logs as $Log)
                         @if($Log->comment_check == 0)
-                            <div  style="width:33%; height:100%;">
+                            <div  style="width:33.333%; height:100%;">
                                 
-                                <div class="shadow rounded-9" >
+                                <div  >
                                     <a href="{{ url('Logdetail/'.$Log->id) }}">
                                         <!-- 画像 -->
                                         <div >
-                                            <div> <img src="upload/{{$Log->image}}" width='100%' height='128px'　style="object-fit:cover"></div>
+                                            <div> <img src="upload/{{$Log->image}}" width='100%' height='123.75px'　style="object-fit:cover"></div>
                                         </div>
                                         <!-- タイトル -->
                                         

@@ -19,10 +19,11 @@
     <!-- Styles -->
     <link rel='stylesheet' href="{{ asset('css/reset.css') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar-expand-md navbar-light bg-white menu-up shadow">
+        <nav class="navbar navbar-expand-md navbar-light bg-white menu-up shadow">
             <div class="container">
                 
                     <a class="navbar-brand" href="{{ url('/Loglist') }}">
@@ -41,6 +42,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -61,7 +63,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('/Logslist') }}">投稿一覧</a>
+                                    <a class="dropdown-item" href="{{ url('/home') }}">プロフィール</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -87,11 +89,11 @@
         </main>
         <footer>
             <ul class = "p-3 row bg-info menu-bottom shadow-bottom">
-                   <li class="col-3 text-center"><a href="{{ url('/Logslist1') }}" class = "text-danger"> <img src="{{ asset('img/icons8-犬の心-30.png') }}" alt="logo" style="width:35px;"></a></li>
-                   <li class="col-3 text-center"><a href="{{ url('/Logslist2') }}" class = "text-success"> <img src="{{ asset('img/icons8-ドッグコーン-30.png') }}" alt="logo" style="width:35px;"></a></li>
-                   <li class="col-3 text-center"><a href="{{ url('/') }}" class = "text-primary"> <img src="{{ asset('img/icons8-peace-pigeon-50.png') }}" alt="logo" style="width:35px;"></a></li>
+                   <li class="col-3 text-center"><a href="{{ url('/Logslist1') }}" class = "text-danger"> <img src="{{ asset('img/可愛いハートの無料アイコン1 (1).png') }}" alt="logo" style="width:35px;color:red;"></a></li>
+                   <li class="col-3 text-center"><a href="{{ url('/Logslist2') }}" class = "text-success"> <img src="{{ asset('img/失恋の無料素材1 (2).png') }}" alt="logo" style="width:35px;"></a></li>
+                   <li class="col-3 text-center"><a href="{{ url('/') }}" class = "text-primary"> <img src="{{ asset('img/枠つきの羽根ペンのアイコン素材.png') }}" alt="logo" style="width:35px;"></a></li>
                    
-                   <li class="col-3 text-center"><a href="{{ url('/home') }}" class = "text-dark"> <img src="{{ asset('img/icons8-犬の家-64.png') }}" alt="logo" style="width:35px;"></a></li>
+                   <li class="col-3 text-center"><a href="{{ url('/home') }}" class = "text-dark"> <img src="{{ asset('img/普通の家のアイコン.png') }}" alt="logo" style="width:35px;"></a></li>
                    
             </ul>
         </footer>
@@ -99,4 +101,5 @@
        
     </div>
 </body>
+
 </html>

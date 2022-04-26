@@ -22,56 +22,48 @@
                             @if($Log->comment_check == 0)
                             <!--グラフ作成-->
                                 <?php
-                                $Activity =  $Log->pet_activity;
-                                $Hungry =  $Log->pet_hungry;
-                                $Water =  $Log->pet_water;
-                                $Urine =  $Log->pet_urine;
-                                $Feces =  $Log->pet_feces;
-                                $Emit =  $Log->pet_emit;
-                                
-                                $total_score = $Activity + $Hungry + $Water + $Urine + $Feces + $Emit;
-                                $area = `群馬県`;
-                                
-                                
-                                echo '<div class="mx-3 alert alert-info rounded p-2">';
-                                  $high   = 10;
-                                  $middle = 20;
-                                  if($total_score <= $high){
-                                    echo "<h2>あなたのスコアは".$total_score."点です。</h2>";
+                                    $Activity =  $Log->pet_activity;
+                                    $Hungry =  $Log->pet_hungry;
+                                    $Water =  $Log->pet_water;
+                                    $Urine =  $Log->pet_urine;
+                                    $Feces =  $Log->pet_feces;
+                                    $Emit =  $Log->pet_emit;
                                     
-                                    echo "<p>健康上の問題がある可能性が高いです！</p>
-                                          <p>お住まいの地域の医療携室へ相談してみることをお勧めします！";
-                                  }
-                                  else if($total_score <= $middle){
-                                    echo "<h2>あなたのスコアは".$total_score."点です。</h2>";
-                                    echo "<p>健康上の問題がある可能性は高くありませんが、問題があるかもしれません。</p>
-                                          <p>動物病院へ相談してみてはいかがでしょうか？";
-                                  }
-                                  else{
-                                    echo "<h2>あなたのスコアは".$total_score."点です。</h2>";
-                                    echo "<p>健康上の問題がある可能性は低そうです。</p>
-                                          <p>但し、気になることがある場はお住まいの地域の動物病院へ相談してみしょう。</p>";
-                                  }
-                                echo "<br>";
-                                echo "<a href=`https//:google.co.jp/search?&q=医療連携室&q=$area/`><p>近くの動物病院を検索する。</p></a>";
+                                    $total_score = $Activity + $Hungry + $Water + $Urine + $Feces + $Emit;
+                                    $area = '群馬県';
+                                    
+                                    
+                                    echo '<div class="mx-3 alert alert-info rounded p-2">';
+                                    $high   = 10;
+                                    $middle = 20;
+                                    if($total_score <= $high){
+                                        echo "<h2>あなたのスコアは".$total_score."点です。</h2>";
+                                        
+                                        echo "<p>健康上の問題がある可能性が高いです！</p>
+                                              <p>お住まいの地域の医療携室へ相談してみることをお勧めします！";
+                                    }
+                                    elseif($total_score <= $middle){
+                                        echo "<h2>あなたのスコアは".$total_score."点です。</h2>";
+                                        echo "<p>健康上の問題がある可能性は高くありませんが、問題があるかもしれません。</p>
+                                              <p>動物病院へ相談してみてはいかがでしょうか？";
+                                    }
+                                    else{
+                                        echo "<h2>あなたのスコアは".$total_score."点です。</h2>";
+                                        echo "<p>健康上の問題がある可能性は低そうです。</p>
+                                              <p>但し、気になることがある場はお住まいの地域の動物病院へ相談してみしょう。</p>";
+                                    }
+                                    echo "<br>";
+                                    echo "<a href=\"https://google.co.jp/search?&q=動物病院&q=".$area."\" target=\"_blank\">お住まいの地域の動物病院を検索する。</p></a>";
                                 
-                                
-                                echo "";
-                                
+                               
+                                ?>
+                                <canvas id='myRaderChart' style="width:400;height:400"></canvas>
                                
                                 
                                 
-                                
-                                
-                                
-                                
-                                ?>
-                                <canvas id='myRaderChart'></canvas>
-                                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                                
                                 @if($Log->comment_check == 0)
                                     <div class="">
-                                        <!-- 活動量 -->
+                                         <!--活動量 -->
                                         <div class="table-text pb-3  d-flex flex-wrap">
                                             <div class="text-center" style="text-decoration:underline; width:50%;">どれくらい元気？</div>
                                             <div class="text-center" style="width:50%;">
@@ -95,7 +87,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <!-- 食欲 -->
+                                         <!--食欲 -->
                                         <div class="table-text pb-3  d-flex flex-wrap">
                                             <div class="text-center" style="text-decoration:underline; width:50%;">食欲ある？</div>
                                             <div class="text-center" style="width:50%;">
@@ -120,7 +112,7 @@
                                             </div>
                                         </div>
                                         
-                                        <!-- 飲水 -->
+                                         <!--飲水 -->
                                          <div class="table-text pb-3  d-flex flex-wrap">
                                             <div class="text-center" style="text-decoration:underline; width:50%;">水どれくらい飲む？</div>
                                             <div class="text-center" style="width:50%;">
@@ -145,7 +137,7 @@
                                             </div>
                                         </div>
                                         
-                                       <!-- 排尿 -->
+                                        <!--排尿 -->
                                          <div class="table-text pb-3  d-flex flex-wrap">
                                             <div class="text-center" style="text-decoration:underline; width:50%;">おしっこはしてる？</div>
                                             <div class="text-center" style="width:50%;">
@@ -170,7 +162,7 @@
                                             </div>
                                         </div>
                                         
-                                        <!-- 排尿 -->
+                                         <!--排尿 -->
                                         <div class="table-text pb-3  d-flex flex-wrap">
                                             <div class="text-center" style="text-decoration:underline; width:50%;">うんちはどんな感じ？</div>
                                             <div class="text-center" style="width:50%;">
@@ -195,7 +187,7 @@
                                             </div>
                                         </div>
                                         
-                                         <!-- 嘔吐 -->
+                                          <!--嘔吐 -->
                                          <div class="table-text pb-3  d-flex flex-wrap">
                                             <div class="text-center" style="text-decoration:underline; width:50%;">どれくらい吐く？</div>
                                             <div class="text-center" style="width:50%;">
@@ -219,10 +211,10 @@
                                             @endif
                                             </div>
                                          </div>
-                                    </div>
+                                    </div
+                                    
                                 @endif
-                                </div>
-                           
+                               </div>
                             @endif
                             
                             
@@ -330,5 +322,49 @@
                 </div>
             </table>
         </div>
+        <script>
+        let activity = JSON.parse('<?php echo $Activity; ?>'); 
+        let hungry = JSON.parse('<?php echo $Hungry; ?>'); 
+        let water = JSON.parse('<?php echo $Water; ?>'); 
+        let urine = JSON.parse('<?php echo $Urine; ?>'); 
+        let feces = JSON.parse('<?php echo $Feces; ?>'); 
+        let emit = JSON.parse('<?php echo $Emit; ?>'); 
         
+       
+       
+        
+        console.log(activity);
+        var ctx = document.getElementById("myRaderChart");
+        var myRadarChart = new Chart(ctx, {
+            type: 'radar', 
+            data: { 
+                labels: ["活動性", "食欲", "飲水", "尿", "便", "嘔吐"],
+                datasets: [{
+                    label: 'Aさん',
+                    data: [activity, hungry, water, urine, feces, emit],
+                    backgroundColor: 'RGBA(225,95,150, 0.5)',
+                    borderColor: 'RGBA(225,95,150, 1)',
+                    borderWidth: 1,
+                    pointBackgroundColor: 'RGB(46,106,177)'
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: '健康状態'
+                },
+                scale:{
+                    ticks:{
+                        suggestedMin: 0,
+                        suggestedMax: 5,
+                        stepSize: 1,
+                        callback: function(value, index, values){
+                            return  value +  '点'
+                        }
+                    }
+                }
+            }
+        });
+       
+    </script>
 @endsection

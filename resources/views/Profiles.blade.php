@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <!-- Bootstrapの定形コード… -->
-    <div class="card-body">
-        <div class="card-title">
-            Profile 作成
+    <div class="card-body my-4">
+        <div class="card-title text-center fw-bold fs-3">
+             プロフィール作成
         </div>
         
         <!-- ↓バリデーションエラーの表示に使用-->

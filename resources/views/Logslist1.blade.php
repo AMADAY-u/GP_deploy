@@ -5,7 +5,7 @@
         <div class="my-5">
             <table class="table table-striped task-table">
                 <!-- テーブルヘッダ -->
-                <div>
+                <div class="card-title text-center">
                     <h1>健康一覧</h1>
                 </div>
                 <!-- テーブル本体 -->
@@ -19,7 +19,7 @@
                                     <a href="{{ url('Logdetail/'.$Log->id) }}">
                                         <!-- 画像 -->
                                         <div >
-                                            <div> <img src="upload/{{$Log->image}}" width='100%' height='128px'　style="object-fit:cover"></div>
+                                            <div> <img src="upload/{{$Log->image}}" width='100%' height='123.75px'　style="object-fit:cover"></div>
                                         </div>
                                         <!-- タイトル -->
                                         

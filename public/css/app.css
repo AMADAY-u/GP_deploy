@@ -11306,7 +11306,7 @@ textarea.form-control-lg {
 }
 
 main{
-  max-width: 400px;
+  max-width: 414px;
 }
 
 .heath-list{
@@ -11315,14 +11315,12 @@ main{
 
 /*ボトムナビゲーション*/
 .menu-up {
-  width: 400px;
+  width: 414px;
   position: fixed;
   max-width: 100%;
   top: 0;
   z-index: 10000;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  
  
 }
 
