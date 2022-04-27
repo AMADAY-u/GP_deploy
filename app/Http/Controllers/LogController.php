@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Log;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Auth; // 冒頭付近に追加
 
@@ -16,7 +17,7 @@ class LogController extends Controller
     public function index1()
     {
         $Logs = Log::orderBy('created_at', 'asc')->get();
-        return view('Logslist1', ['Logs'=> $Logs]);
+        return view('Logslist1', ['Logs'=> $Logs],);
     }
     public function index2()
     {
@@ -79,7 +80,9 @@ class LogController extends Controller
     public function show(Log $Log)
     {
         $comments = Log::find($Log->id)->comments;
-        return view('Logdetail', ['Log' => $Log],['comments' => $comments]);
+        $profiles = Profile::orderBy('created_at', 'asc')->get();
+        
+        return view('Logdetail', ['Log' => $Log],['comments' => $comments],['profiles' => $profiles]);
     }
 
     /**
@@ -131,6 +134,6 @@ class LogController extends Controller
     public function destroy(Log $Log)
     {
         $Log->delete();       //追加
-        return redirect('/Logslist');  //追加
+        return redirect('/home');  //追加
     }
 }

@@ -18,7 +18,7 @@
                                     <a href="{{ url('Logdetail/'.$Log->id) }}">
                                         <!-- 画像 -->
                                         <div >
-                                            <div> <img src="upload/{{$Log->image}}" width='100%' height='123.75px'　style="object-fit:cover"></div>
+                                            <div> <img src="upload/{{$Log->image}}" width='100%' height='123.75px' style="object-fit:cover"></div>
                                         </div>
                                         <!-- タイトル -->
                                         

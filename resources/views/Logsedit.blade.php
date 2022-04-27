@@ -18,7 +18,30 @@
                 <label for="pet_foodname" class="col-sm-3 control-label">食べ物は？</label>
                 <input type="text" name="pet_foodname" class="form-control" id="pet_foodname" value="{{$Log->pet_foodname}}">
             </div>
-            <!-- 活動量 -->
+            
+            <!-- コメント -->
+            <div class="form-group col-md-6 p-2">
+                <label for="pet_comment" class="col-sm-3 control-label">コメント</label>
+                <input type="textarea" name="pet_comment" class="form-control" id="pet_comment" value="{{$Log->pet_comment}}">
+            </div>
+            
+            <div class="text-danger fw-bold fs-3 pt-">もう一度選択し直してね</div>
+            <div class="form-group col-md-6 p-2row g-2">
+                <label for="pet_comment" class="col-sm-3 control-label">今の状態は？</label>
+        			<p>
+            			<label class=" col-6">
+            				<input  id="hide" class="col-6" name="comment_check" type="radio" value="1" onclick="buttonClick()"/>
+            				<span>健康(^ ^)b</span>
+            				
+            			</label>
+        			</p>
+        			<label class="with-gap col-6">
+        				<input id="disp" class="with-gap col-6" name="comment_check" type="radio" value="0" onclick="buttonClick()"/>
+        				<span>不調(＞＜)</span>
+        			</label>
+            </div>
+            
+             <!-- 活動量 -->
             <div class="form-group col-md-6 p-2">
                 <label for="pet_activity" class="col-sm-3 control-label">どれくらい活発？</label>
                <input type="text" name="pet_activity" class="form-control" id="pet_activity" value="{{$Log->pet_activity}}">
@@ -28,12 +51,6 @@
                 <label for="pet_hungry" class="col-sm-3 control-label">食欲はある？</label>
                 <input type="text" name="pet_hungry" class="form-control" id="pet_hungry" value="{{$Log->pet_hungry}}">
             </div>
-            <!-- コメント -->
-            <div class="form-group col-md-6 p-2">
-                <label for="pet_comment" class="col-sm-3 control-label">コメント</label>
-                <input type="textarea" name="pet_comment" class="form-control" id="pet_comment" value="{{$Log->pet_comment}}">
-            </div>
-            
             
             <!-- Save ボタン/Back ボタン -->
                 <div class="form-group p-2">

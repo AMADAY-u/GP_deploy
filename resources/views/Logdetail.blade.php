@@ -57,9 +57,52 @@
                                 
                                
                                 ?>
-                                <canvas id='myRaderChart' style="width:400;height:400"></canvas>
-                               
-                                
+                                <canvas id='myRaderChart' class="pb"></canvas>
+                                <script>
+                                    let activity = JSON.parse('<?php echo $Activity; ?>'); 
+                                    let hungry = JSON.parse('<?php echo $Hungry; ?>'); 
+                                    let water = JSON.parse('<?php echo $Water; ?>'); 
+                                    let urine = JSON.parse('<?php echo $Urine; ?>'); 
+                                    let feces = JSON.parse('<?php echo $Feces; ?>'); 
+                                    let emit = JSON.parse('<?php echo $Emit; ?>'); 
+                                    
+                                   
+                                   
+                                    
+                                    console.log(activity);
+                                    var ctx = document.getElementById("myRaderChart");
+                                    var myRadarChart = new Chart(ctx, {
+                                        type: 'radar', 
+                                        data: { 
+                                            labels: ["活動性", "食欲", "飲水", "尿", "便", "嘔吐"],
+                                            datasets: [{
+                                                label: '健康状態',
+                                                data: [activity, hungry, water, urine, feces, emit],
+                                                backgroundColor: 'RGBA(225,95,150, 0.5)',
+                                                borderColor: 'RGBA(225,95,150, 1)',
+                                                borderWidth: 1,
+                                                pointBackgroundColor: 'RGB(46,106,177)'
+                                            }]
+                                        },
+                                        options: {
+                                            title: {
+                                                display: true,
+                                                text: '健康状態'
+                                            },
+                                            scale:{
+                                                r:{
+                                                    suggestedMin: 0,
+                                                    suggestedMax: 5,
+                                                    stepSize: 1,
+                                                    callback: function(value, index, values){
+                                                        return  value +  '点'
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    });
+                                   
+                                </script>
                                 
                                     <div class="">
                                          <!--活動量 -->
@@ -125,7 +168,7 @@
                                                  <div>いつもより飲まない</div>
                                             @endif
                                             @if($Log->pet_water == 2)
-                                                 <div>少ないけど自力では飲める</div>
+                                                 <div>少ないけど自力で飲める</div>
                                             @endif
                                             @if($Log->pet_water == 1)
                                                  <div>飲ませてあげてる</div>
@@ -150,10 +193,10 @@
                                                  <div>いつもより少ないかな</div>
                                             @endif
                                             @if($Log->pet_urine == 2)
-                                                 <div>少しだけ出てるけど少ない</div>
+                                                 <div>少し出てるけど少ない</div>
                                             @endif
                                             @if($Log->pet_urine == 1)
-                                                 <div>踏ん張っているけど出ていない/血尿</div>
+                                                 <div>踏ん張るけど出ていない<br>血尿</div>
                                             @endif
                                             @if($Log->pet_urine == 0)
                                                  <div>全く見られない</div>
@@ -169,19 +212,19 @@
                                                 <div>いつも通り変わらない</div>
                                             @endif
                                             @if($Log->pet_feces == 4)
-                                                 <div>少し頻度が減った/たまにやわらかい便が出る</div>
+                                                 <div>少し頻度が減った<br>たまにやわらかい便が出る</div>
                                             @endif
                                             @if($Log->pet_feces == 3)
-                                                 <div>頻度が明らかに減った/柔らかい便が出ている</div>
+                                                 <div>頻度が明らかに減った<br>柔らかい便が出ている</div>
                                             @endif
                                             @if($Log->pet_feces == 2)
-                                                 <div>ほんの少し出る/ときどき泥状の便が出る</div>
+                                                 <div>ほんの少し出る<br>ときどき泥状の便が出る</div>
                                             @endif
                                             @if($Log->pet_feces == 1)
-                                                 <div>ほとんど出ない/泥状/黒い便</div>
+                                                 <div>ほとんど出ない<br>泥状/黒い便</div>
                                             @endif
                                             @if($Log->pet_feces == 0)
-                                                 <div>全くでない/液状/血便</div>
+                                                 <div>全くでない<br>液状/血便</div>
                                             @endif
                                             </div>
                                         </div>
@@ -200,10 +243,10 @@
                                                  <div>いつもより少し多いかも</div>
                                             @endif
                                             @if($Log->pet_emit == 2)
-                                                 <div>多いけど理由はわかる（薬とか）</div>
+                                                 <div>多いけど理由はわかる<br>(薬とか)</div>
                                             @endif
                                             @if($Log->pet_emit == 1)
-                                                 <div>理由がわからず明らかに多い</div>
+                                                 <div>理由がわからずに多い</div>
                                             @endif
                                             @if($Log->pet_emit == 0)
                                                  <div>止まらない</div>
@@ -213,53 +256,6 @@
                                     </div>
                                 </div>    
                                 
-                                <script>
-                                let activity = JSON.parse('<?php echo $Activity; ?>'); 
-                                let hungry = JSON.parse('<?php echo $Hungry; ?>'); 
-                                let water = JSON.parse('<?php echo $Water; ?>'); 
-                                let urine = JSON.parse('<?php echo $Urine; ?>'); 
-                                let feces = JSON.parse('<?php echo $Feces; ?>'); 
-                                let emit = JSON.parse('<?php echo $Emit; ?>'); 
-                                
-                               
-                               
-                                
-                                console.log(activity);
-                                var ctx = document.getElementById("myRaderChart");
-                                var myRadarChart = new Chart(ctx, {
-                                    type: 'radar', 
-                                    data: { 
-                                        labels: ["活動性", "食欲", "飲水", "尿", "便", "嘔吐"],
-                                        datasets: [{
-                                            label: 'Aさん',
-                                            data: [activity, hungry, water, urine, feces, emit],
-                                            backgroundColor: 'RGBA(225,95,150, 0.5)',
-                                            borderColor: 'RGBA(225,95,150, 1)',
-                                            borderWidth: 1,
-                                            pointBackgroundColor: 'RGB(46,106,177)'
-                                        }]
-                                    },
-                                    options: {
-                                        title: {
-                                            display: true,
-                                            text: '健康状態'
-                                        },
-                                        scale:{
-                                            ticks:{
-                                                suggestedMin: 0,
-                                                suggestedMax: 5,
-                                                stepSize: 1,
-                                                callback: function(value, index, values){
-                                                    return  value +  '点'
-                                                }
-                                            }
-                                        }
-                                    }
-                                });
-                               
-                            </script>
-                               
-                               
                             @endif
                             
                             
@@ -269,8 +265,10 @@
                             <div class="mx-3">
                                 <!-- 餌内容物 -->
                                 <div class="table-text pb-3">
-                                    <div class="fs-4" style="text-decoration:underline;">何食べてる？</div>
-                                    <div>{{ $Log->pet_foodname }}</div>
+                                <div class="table-text d-flex flex-wrap border-info">
+
+                                    <div class="fs-4" style="text-decoration:underline;width:50%;">何食べてる？</div>
+                                    <div class="fs-3" style="width:50%;">{{ $Log->pet_foodname }}</div>
                                 </div>
                                 
                                 <!-- コメント -->

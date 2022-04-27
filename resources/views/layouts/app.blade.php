@@ -22,11 +22,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-    <div id="app">
+    <div>
         <nav class="navbar navbar-expand-md navbar-light bg-white menu-up shadow">
             <div class="container">
                 
-                    <a class="navbar-brand" href="{{ url('/Loglist') }}">
+                    <a class="navbar-brand" href="{{ url('/Logslist1') }}">
                         <img src="{{ asset('img/horizontal_on_white_by_logaster.png') }}" alt="logo" style="width:150px;">
                     </a>
                     

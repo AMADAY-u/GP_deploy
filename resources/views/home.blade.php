@@ -100,6 +100,14 @@
                                         <!-- タイトル -->
                                         <td class="table-text align-top">
                                             <div class='row pt-2'>
+                                                <div class="pb-1 fw-bold text-success">
+                                                    @if($Log->comment_check == 1)
+                                                    <span style="color:orange;">健康(^ ^)b</span>
+                                                    @endif
+                                                    @if($Log->comment_check == 0)
+                                                    <span class="text-primary" >不調/(＞＜)\</span>
+                                                    @endif
+                                                </div>
                                                 
                                                 <div class="pb-3">
                                                      <form action="{{ url('Log/'.$Log->id) }}" method="POST">
