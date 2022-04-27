@@ -27,7 +27,7 @@
             <div class="container">
                 
                     <a class="navbar-brand" href="{{ url('/Logslist1') }}">
-                        <img src="{{ asset('img/horizontal_on_white_by_logaster.png') }}" alt="logo" style="width:150px;">
+                        <img src="{{ asset('img/horizontal_on_white_by_logaster1.png') }}" alt="logo" style="width:150px;">
                     </a>
                     
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
