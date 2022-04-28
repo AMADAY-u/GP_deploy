@@ -137,7 +137,7 @@
                 <div class="form-group p-2">
 	                <div class="well well-sm">
 	                    <button type="submit" class="btn btn-primary">Save</button>
-	                    <a class="btn btn-link pull-right" href="{{ url('/Logslist') }}"> Back</a>
+	                    <a class="btn btn-link pull-right" href="{{ url('/home') }}"> Back</a>
 	                </div>
                 </div>
                 <!--/ Save ボタン/Back ボタン -->
