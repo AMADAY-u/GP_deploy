@@ -26,7 +26,7 @@
             <div class="container">
                 
                     <a class="navbar-brand" href="{{ url('/Logslist1') }}">
-                        <img src="{{ asset('img/horizontal_on_white_by_logaster1.png') }}" alt="logo" style="width:150px;">
+                        <img src="{{ asset('img/horizontal_on_white_by_logaster (2).png') }}" alt="logo" style="width:150px;">
                     </a>
                     
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -92,7 +92,7 @@
                    <li class="col-3 text-center"><a href="{{ url('/Logslist2') }}" class = "text-success"> <img src="{{ asset('img/失恋の無料素材1 (2).png') }}" alt="logo" style="width:35px;"></a></li>
                    <li class="col-3 text-center"><a href="{{ url('/') }}" class = "text-primary"> <img src="{{ asset('img/枠つきの羽根ペンのアイコン素材.png') }}" alt="logo" style="width:35px;"></a></li>
                    
-                   <li class="col-3 text-center"><a href="{{ url('/home') }}" class = "text-dark"> <img src="{{ asset('img/普通の家のアイコン.png') }}" alt="logo" style="width:35px;"></a></li>
+                   <li class="col-3 text-center"><a href="{{ url('/home') }}" class = "text-dark"> <img src="{{ asset('img/icons8-犬の心-30.png') }}" alt="logo" style="width:35px;"></a></li>
                    
             </ul>
         </footer>

@@ -122,7 +122,7 @@ class LogController extends Controller
         $Logs->pet_emit =  $request->pet_emit;
         $Logs->pet_comment =    $request->pet_comment;
         $Logs->save();
-        return redirect('/Logslist');
+        return redirect("/Logdetail/$Logs->id");
     }
 
     /**

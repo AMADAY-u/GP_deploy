@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
     <!-- Book: 既に登録されてる本のリスト -->
-        <div class="my-4">
+        <div class="my-5">
             <table class="table table-striped task-table">
                 
                 <!-- テーブル本体 -->
                 <div>
-                    <div class ='my-4'>
+                    <div>
                         
                         <div>
                             <!-- 画像 -->
@@ -264,7 +264,6 @@
                             
                             <div class="mx-3">
                                 <!-- 餌内容物 -->
-                                <div class="table-text pb-3">
                                 <div class="table-text d-flex flex-wrap border-info">
 
                                     <div class="fs-4" style="text-decoration:underline;width:50%;">何食べてる？</div>
@@ -308,7 +307,7 @@
                                 <!--</div>-->
                                 <hr>
                                  <!--コメント送信-->
-                                <div class="row mb-3">
+                                <div class="row">
                                     <form action="{{ url('Comments') }}" method="POST" class="form-horizontal">
                                         @csrf
                                         <!-- id 値を送信 -->
