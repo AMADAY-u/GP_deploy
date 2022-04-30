@@ -87,7 +87,7 @@
             
         </main>
         <footer>
-            <ul class = "p-3 row bg-info menu-bottom shadow-bottom">
+            <ul class = "p-3 row menu-bottom shadow-bottom"  style="background-color:orange;">
                    <li class="col-3 text-center"><a href="{{ url('/Logslist1') }}" class = "text-danger"> <img src="{{ asset('img/可愛いハートの無料アイコン1 (1).png') }}" alt="logo" style="width:35px;color:red;"></a></li>
                    <li class="col-3 text-center"><a href="{{ url('/Logslist2') }}" class = "text-success"> <img src="{{ asset('img/失恋の無料素材1 (2).png') }}" alt="logo" style="width:35px;"></a></li>
                    <li class="col-3 text-center"><a href="{{ url('/') }}" class = "text-primary"> <img src="{{ asset('img/枠つきの羽根ペンのアイコン素材.png') }}" alt="logo" style="width:35px;"></a></li>

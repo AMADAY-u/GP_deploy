@@ -11,7 +11,7 @@
                     
                    
                     
-                    <div class="alert alert-primary">
+                    <div class="alert alert-warning">
                             <!-- Book: 既に登録されてる本のリスト -->
                            <h1 style='color: orange;'>Profile</h1>
                             @if(isset($profiles))
