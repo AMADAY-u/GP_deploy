@@ -333,8 +333,8 @@
                                                     <!--<div>-->
                                                         @if($comment->user_id === 2)
                                                         
+                                                        <div class="fw-bold ms-1">専属獣医スタッフ</div>
                                                         
-                                                        専属獣医スタッフ
                                                         @endif
                                                     <!--</div>-->
                                                     <div class="mx-3 rounded mb-2" style="background-color:#d3d3d3;">
