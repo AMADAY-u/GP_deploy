@@ -273,7 +273,7 @@
                                 <!-- コメント -->
                                 <div class="table-text pb-3">
                                     <div class="fs-4" style="text-decoration:underline;">コメント</div>
-                                    <div>{{ $Log->pet_comment }}</div>
+                                    <div class="fs-4 ps-3">{{ $Log->pet_comment }}</div>
                                 </div>
                                 
                                 

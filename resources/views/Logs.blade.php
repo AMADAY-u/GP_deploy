@@ -40,15 +40,15 @@
                 <label for="pet_comment" class="col-sm-3 control-label">今の状態は？</label>
         			<p>
             			<label class=" col-6">
-            				<input  id="hide" class="col-6" name="comment_check" type="radio" value="1" onclick="buttonClick()"/>
-            				<span>健康(^ ^)b</span>
+            				<input  id="hide" class="col-6" name="comment_check" type="radio" value="1" onclick="buttonClick()" checked/>
+        				<span>健康(^ ^)b</span>
             				
             			</label>
         			</p>
-        			<label class="with-gap col-6">
-        				<input id="disp" class="with-gap col-6" name="comment_check" type="radio" value="0" onclick="buttonClick()"/>
-        				<span>不調(＞＜)</span>
-        			</label>
+        			<!--<label class="with-gap col-6">-->
+           <!-- 				<input id="disp" class="with-gap col-6" name="comment_check" type="radio" value="0" onclick="buttonClick()"/>-->
+        			<!--	<span>不調(＞＜)</span>-->
+        			<!--</label>-->
             </div>
             
             <div id="sub-form" style="display:none;">
