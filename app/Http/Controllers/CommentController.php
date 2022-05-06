@@ -40,6 +40,7 @@ class CommentController extends Controller
         // 登録処理
         $comment = new Comment;
         $comment->log_id =    $request->id;
+        $comment->user_id =    Auth::id();
         $comment->comment_content =    $request->comment_content;
         $comment->save();
         return redirect("/Logdetail/$comment->log_id");

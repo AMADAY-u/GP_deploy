@@ -331,11 +331,11 @@
                                             <tbody>
                                                 @foreach ($comments as $comment)
                                                     <!--<div>-->
-                                                    <!--    @if($Log->user_id === 1)-->
+                                                        @if($comment->user_id === 2)
                                                         
                                                         
-                                                    <!--    専属獣医スタッフ-->
-                                                    <!--    @endif-->
+                                                        専属獣医スタッフ
+                                                        @endif
                                                     <!--</div>-->
                                                     <div class="mx-3 rounded mb-2" style="background-color:#d3d3d3;">
                                                     
