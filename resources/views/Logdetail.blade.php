@@ -317,7 +317,7 @@
                                         
                                          <!-- コメント 登録ボタン -->
                                         <div class="input-group mb-3">
-                                            <input type="text" id="comment_content" class="form-control" name="comment_content" placeholder="コメント入力してね！"  aria-describedby="button-addon2" value="{{ old('comment_content') }}">
+                                            <input type="text" id="comment_content" class="form-control" name="comment_content" placeholder="質問ある場合はこちらに！"  aria-describedby="button-addon2" value="{{ old('comment_content') }}">
                                             <button class="btn btn-primary" type="submit" id="button-addon2" style="z-index:0;">送信</button>
                                         </div>
                                     </form>
@@ -330,11 +330,23 @@
                                             <!-- テーブル本体 -->
                                             <tbody>
                                                 @foreach ($comments as $comment)
-                                                    <tr>
+                                                    <!--<div>-->
+                                                    <!--    @if($Log->user_id === 1)-->
+                                                        
+                                                        
+                                                    <!--    専属獣医スタッフ-->
+                                                    <!--    @endif-->
+                                                    <!--</div>-->
+                                                    <div class="mx-3 rounded mb-2" style="background-color:#d3d3d3;">
+                                                    
+                                                    
+                                                        
                                                         <!-- 本タイトル -->
-                                                        <td class="table-text">
+                                                        <div class="table-text">
                                                             <div>{{ $comment->comment_content }}</div>
-                                                        </td>
+                                                        </div>
+                                                        
+                                                        
                                                         <!-- 本: 削除ボタン -->
                                                         <!--<td>-->
                                                         <!--    <form action="{{ url('comment/'.$comment->id) }}" method="POST">-->
@@ -351,7 +363,7 @@
                                                         <!--        <button type="submit" class="btn btn-primary">更新</button>-->
                                                         <!--    </a>-->
                                                         <!--</td>-->
-                                                    </tr>
+                                                    </div>
                                                 @endforeach
                                             </tbody>
                                         </table>

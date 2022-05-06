@@ -45,10 +45,10 @@
             				
             			</label>
         			</p>
-        			<!--<label class="with-gap col-6">-->
-           <!-- 				<input id="disp" class="with-gap col-6" name="comment_check" type="radio" value="0" onclick="buttonClick()"/>-->
-        			<!--	<span>不調(＞＜)</span>-->
-        			<!--</label>-->
+        			<label class="with-gap col-6">
+            				<input id="disp" class="with-gap col-6" name="comment_check" type="radio" value="0" onclick="buttonClick()"/>
+        				<span>不調(＞＜)</span>
+        			</label>
             </div>
             
             <div id="sub-form" style="display:none;">
